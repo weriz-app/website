@@ -1,6 +1,8 @@
 $icon-font-path: '../fonts/';
-$text-padding-big: 25px;
-$text-padding-little: 10px;
+$text-padding-big: 20px;
+$text-padding-small: 10px;
+$container-margin-big: 9.05%;//130/1440
+$container-margin-small: 5%;
 
 // bower:scss
 // endbower
@@ -43,6 +45,13 @@ p{
   //margin: 0;
 }
 
+.column{
+  padding-right:$text-padding-big;
+}
+.left-full-column{
+
+}
+
 .no-margin{
   margin: 0;
 }
@@ -63,13 +72,11 @@ a {
 }
 
 .container{
-  //width:1180px;
-  //margin: 0 auto;
   min-width: 980px;
 }
 
 .content{
-  width:81.9%; //1180/1440
+  width:calc(100% - (#{$container-margin-big} * 2)); //1180/1440
   margin:0 auto;
 }
 
@@ -110,18 +117,19 @@ a {
   float:right;
   background-image: url(../images/header-pattern.svg);
   background-repeat:no-repeat;
-  width:77.54%;
-  padding-top:61.84%; //729.82/1180
-  margin-right:-11.01%; //(130-81.9%)/2
+  width:63.39%;//912.9/1440
+  padding-top:50.68%; //729.82/1440
+  //margin-right:-11.01%; //(130-81.9%)/2
 }
 .intro-text {
   margin-top: 12%; //190/1180
+  margin-left: $container-margin-big;
 }
 .intro-text>h3{
   white-space: nowrap;
 }
 .intro-subscription-wrapper{
-  width:33.47%;//22.46+11.01
+  width:calc(100% - 69.68% - 1%);//912.9/1310=69.68
   margin-top:25px;
 }
 .intro-subscription{
@@ -170,7 +178,7 @@ a {
 
 
 .vision {
-  padding-top:47.04%;//677.4/1440
+  padding-top:47.04%;//677.4/1440 height of hexagonal
   margin-top: 60px;
   position:relative;
 }
@@ -203,6 +211,22 @@ a {
   vertical-align: middle;
 }
 
+
+
+
+
+.what{
+  margin-top:9.02%;//130/1440
+}
+.what-row1-text{
+  float:left;
+  width:calc(50% - #{$container-margin-big});//50-9.05
+  margin-left:$container-margin-big;
+  margin-top:-59.83%;//861/1440
+}
+.what-row1-text-wrapper{
+  @extend .column;
+}
 .what-row1-building{
   float:right;
   width:69.4%; //1000/1440
@@ -220,9 +244,9 @@ a {
   width:50%;
 }
 .what-row2-text-wrapper {
-  padding:0 $text-padding-big;
-  margin-top:15.27%; //110/720
-  margin-right:18.1%;//(100-81.9)/2 *2
+  @extend .column;
+  margin-top:10%;
+  margin-right:calc(2 * #{$container-margin-big});//2*9.05
 }
 .what-row3{
   float:right;
@@ -235,11 +259,11 @@ a {
 .what-row3-text{
   float:left;
   width:40.95%;//50-9.05
-  margin-top:-24.3%; //350/1440
-  margin-left:9.05%;//(100-81.9)/2
+  margin-top:-30%;
+  margin-left:$container-margin-big;//(100-81.9)/2
 }
 .what-row3-text-wrapper{
-  padding:0 25px;
+  @extend .column;
 }
 
 
@@ -266,7 +290,7 @@ a {
   width:50%;
 }
 .how-grid-cell{
-  padding: 0 25px;
+  @extend .column;
   display:table;
   margin-bottom:45px;
 }
@@ -344,7 +368,7 @@ a {
 .step2{
   top:14.94%;//200/1338
   left:39.87%;//560/1404.5
-  width:16.01;//225/1404.5
+  width:16.01%;//225/1404.5
 }
 .step3{
   top:51.19%;//685/1338
@@ -387,12 +411,12 @@ a {
   top:9.4%;//160/1702.5
 }
 .whitepaper-text{
+  @extend .column;
   position: absolute;
   right:0;
   top:16.44%;//300px;
   left:50%;
-  margin-right:9.05%;
-  padding:0 $text-padding-big;
+  margin-right:$container-margin-big;
 }
 .whitepaper-btn{
   background-color: #EF4A23;
@@ -406,12 +430,12 @@ a {
 .faq-wrapper{
   position: absolute;
   top:59.31%; //1010/1702
-  left:9.05%; //130/1440
+  margin-left:$container-margin-big; //130/1440
   height:220px;
-  width:40.95%; //1180/1440 *0.5
+  width: calc(50% - #{$container-margin-big}); //1180/1440 *0.5
 }
 .faq{
-  padding:0 $text-padding-big;
+  @extend .column;
 }
 
 
@@ -549,7 +573,7 @@ a {
   background-repeat:no-repeat;
   background-position: center center;
   width:100%;
-  padding-top:63.5%; //892/1404.57
+  padding-top:60.73%; //853/1404.57
   margin-top:-8.68%; //125/
   position:relative;
 }
@@ -575,10 +599,10 @@ a {
 .contacts-follow>.icons{
   padding-top:10px;
 }
-.icons>.icon{
+.social-icon{
   padding-right:10px;
+  width:40px;
 }
-
 
 
 
@@ -589,31 +613,76 @@ p {
   line-height:25px;
   text-align: justify;
 }
+.text-orange{
+  color:#EF4A23;
+}
+.text-blue{
+  color:#008BAD;
+}
+
+
+
+@media screen and (max-width: 1230px) {
+  .how-grid-cell-wrapper{
+    width:100%;
+  }
+  p{
+    line-height:23px;
+    margin:10px 0;
+  }
+  h2{
+    font-size:43px;
+  }
+}
 
 @media screen and (max-width: 1100px) {
   .menu-item {
       padding: 0px 20px;
   }
-  .what-row2-text-wrapper,.vision-text-wrapper,.what-row3-text-wrapper,.how-grid-cell,.whitepaper-text,.faq{
-    padding: 0 $text-padding-little;
+  .narrow-column{
+    padding-right: $text-padding-small;
+  }
+  .what-row1-text-wrapper,.what-row2-text-wrapper,.what-row3-text-wrapper,.how-grid-cell,.whitepaper-text,.faq{
+    @extend .narrow-column;
+  }
+  .vision-text-wrapper{
+    padding: 0 $text-padding-small;
   }
   p {
-    line-height:23px;
+    font-size:15px;
+    line-height:20px;
     margin:0;
   }
   h2{
     font-size:40px;
   }
-  p{
-    font-size:15px;
-  }
   .contacts-title,.contacts-follow{
     padding:10px;
   }
-}
-
-@media screen and (max-width: 1200px) {
-  .how-grid-cell-wrapper{
-    width:100%;
+  .social-icon{
+    width:37px;
+    padding-right:5px;
+  }
+  .content{
+    width:calc(100% - (#{$container-margin-small} * 2)); //1180/1440
+  }
+  .intro-subscription-wrapper{
+    width:calc(100% - 66.73% - 1%);//912.9/(0.95*1440)=66.73 //this depends on container-margin-small
+  }
+  .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper{
+    margin-left: $container-margin-small;
+  }
+  .what-row1-text,.faq-wrapper,.what-row3-text{
+    width: calc(50% - #{$container-margin-small});
+  }
+  .what-row2-text-wrapper{
+    margin-right: calc(2 * #{$container-margin-small});
+  }
+  .whitepaper-text{
+    margin-right: $container-margin-small;
+  }
+  .vision{
+    padding-top:51.7%;
   }
 }
+
