@@ -316,21 +316,21 @@ a {
 
 
 
-.echosystem{
+.ecosystem{
   margin-top:60px;
   padding-top:40.76%;//587/1440
   position: relative;
 }
-.echosystem-wrapper{
+.ecosystem-wrapper{
   position: absolute;
   top: 0; bottom: 0; left: 0; right: 0;
 }
-.echosystem-arrow{
+.ecosystem-arrow{
   float:right;
   width:35.3%; //509/1440
   transform: scaleX(-1);
 }
-.echosystem-img{
+.ecosystem-img{
   
 }
 
@@ -350,7 +350,7 @@ a {
 }
 .when-title {
   position: absolute;
-  top:9%;
+  top:5%;
   left:0;
   right:0;
 }
@@ -358,22 +358,22 @@ a {
   position: absolute;
   text-align: center;
   color: #DDDDDD;
-  padding:0 5px;
+  padding:0 10px;
 }
 .step1{
   top:33.25%;//445/1338
   left:69.98%;//140/1404.5
-  width:19.93%;//280/1404.5
+  width:18.6%;
 }
 .step2{
   top:14.94%;//200/1338
   left:39.87%;//560/1404.5
-  width:16.01%;//225/1404.5
+  width:15.6%;
 }
 .step3{
   top:51.19%;//685/1338
   left:39.87%;//560/1404.5
-  width:19.93%;//280/1404.5
+  width:18.75%;//280/1404.5
 }
 .step4{
   top:34.37%;//460/1338
@@ -383,7 +383,7 @@ a {
 .step5{
   top:69.88%;//935/1338
   left:9.96%;//140/1404.5
-  width:19.93%;//280/1404.5
+  width:18.75%;//280/1404.5
 }
 .step > h4{
   color:#EF4A23;
@@ -633,6 +633,10 @@ p {
   h2{
     font-size:43px;
   }
+  .social-icon{
+    width:37px;
+    padding-right:5px;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -658,10 +662,6 @@ p {
   }
   .contacts-title,.contacts-follow{
     padding:10px;
-  }
-  .social-icon{
-    width:37px;
-    padding-right:5px;
   }
   .content{
     width:calc(100% - (#{$container-margin-small} * 2)); //1180/1440
