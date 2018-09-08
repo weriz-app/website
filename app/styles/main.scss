@@ -3,6 +3,7 @@ $text-padding-big: 20px;
 $text-padding-small: 10px;
 $container-margin-big: 9.05%;//130/1440
 $container-margin-small: 5%;
+$default-text-font-size: 16px;
 
 // bower:scss
 // endbower
@@ -38,18 +39,30 @@ h4{
   margin: 0;
 }
 
+h5{
+  font-size: 18px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+
 p{
-  font-size: 16px;
+  font-size: $default-text-font-size;
+  line-height:25px;
   font-weight: 300;
   color:#dddddd;
-  //margin: 0;
+  text-align: justify;
+}
+
+ol{
+  list-style-type: none;
+}
+ul{
+  list-style-type: none;
+  padding-left:20px;
 }
 
 .column{
   padding-right:$text-padding-big;
-}
-.left-full-column{
-
 }
 
 .no-margin{
@@ -138,23 +151,22 @@ a {
 }
 .intro-subscription>div{
   display: table-cell;
+  vertical-align: middle;
 }
 .subscription-input {
   background-color:rgba($color: #183C68, $alpha: 0.64);
   border:none;
-  //width:290px;
   width:100%;
   height:40px;
   padding:0 8px;
-  color: rgba($color: #FFFFFF, $alpha: 0.58);
-  font-size: 11pt;
-  font-weight: 100;
+  font-size: $default-text-font-size;
+  font-weight:100;
   vertical-align: middle;
   outline:none;
 }
 ::placeholder {
   color: rgba($color: #FFFFFF, $alpha: 0.58);
-  font-size: 11pt;
+  font-size: 14px;
   font-weight: 100;
 }
 .subscription-button-wrapper{
@@ -429,14 +441,31 @@ a {
 }
 .faq-wrapper{
   position: absolute;
-  top:59.31%; //1010/1702
+  top:55%;
   margin-left:$container-margin-big; //130/1440
-  height:220px;
   width: calc(50% - #{$container-margin-big}); //1180/1440 *0.5
+  z-index: 1;
 }
 .faq{
   @extend .column;
 }
+
+ul.collapsible{
+  list-style-image: url(../images/right-arrow.svg)
+}
+li.selected{
+  list-style-image: url(../images/down-arrow.svg)
+}
+ul.collapsible p{
+  display:none;
+}
+li.selected p{
+  display:block;
+}
+ul.collapsible a{
+  text-decoration: underline;
+}
+
 
 
 
@@ -605,21 +634,12 @@ a {
 }
 
 
-
-ol{
-  list-style-type: none;
-}
-p {
-  line-height:25px;
-  text-align: justify;
-}
 .text-orange{
   color:#EF4A23;
 }
 .text-blue{
   color:#008BAD;
 }
-
 
 
 @media screen and (max-width: 1230px) {
@@ -633,9 +653,15 @@ p {
   h2{
     font-size:43px;
   }
+  .faq-wrapper{
+    width: calc(52% - #{$container-margin-small});//a little bit of cheating
+  }
   .social-icon{
     width:37px;
     padding-right:5px;
+  }
+  ul{
+    margin-top:0;
   }
 }
 
@@ -660,6 +686,9 @@ p {
   h2{
     font-size:40px;
   }
+  h5{
+    font-size:16px;
+  }
   .contacts-title,.contacts-follow{
     padding:10px;
   }
@@ -672,8 +701,11 @@ p {
   .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper{
     margin-left: $container-margin-small;
   }
-  .what-row1-text,.faq-wrapper,.what-row3-text{
+  .what-row1-text,.what-row3-text{
     width: calc(50% - #{$container-margin-small});
+  }
+  .faq-wrapper{
+    width: calc(55% - #{$container-margin-small});//a little bit of cheating
   }
   .what-row2-text-wrapper{
     margin-right: calc(2 * #{$container-margin-small});
@@ -684,5 +716,6 @@ p {
   .vision{
     padding-top:51.7%;
   }
+  
 }
 
