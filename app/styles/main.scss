@@ -4,6 +4,8 @@ $text-padding-small: 10px;
 $container-margin-big: 9.05%;//130/1440
 $container-margin-small: 5%;
 $default-text-font-size: 16px;
+$color-orange:#F27D00;
+$color-light-blue:#0E79EB;
 
 // bower:scss
 // endbower
@@ -22,7 +24,7 @@ h1{
 }
 
 h2{
-  font-size: 47px;
+  font-size: 44px;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -61,14 +63,6 @@ ul{
   padding-left:20px;
 }
 
-.column{
-  padding-right:$text-padding-big;
-}
-
-.no-margin{
-  margin: 0;
-}
-
 html, body{
     margin: 0px; padding: 0px;
     background-color:#0B173D;
@@ -82,6 +76,27 @@ body, input, button {
 a {
   color: white;
   text-decoration: none; /* no underline */
+}
+
+button:not(:disabled){
+  cursor:pointer;
+}
+button:disabled{
+  opacity: 0.65;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+
+.column{
+  padding-right:$text-padding-big;
+}
+
+.no-margin{
+  margin: 0;
 }
 
 .container{
@@ -108,6 +123,9 @@ a {
 .logo {
   float:left;
   line-height:0;
+}
+.logo-img{
+  height:100px;
 }
  
 .menu-items{
@@ -173,7 +191,7 @@ a {
   width:62px;
 }
 .subscription-btn{
-  background-color: #EF4A23;
+  background-color: $color-orange;
   background-image: url(../images/tick.png);
   background-position:center;
   background-repeat:no-repeat;
@@ -287,10 +305,10 @@ a {
   text-align: center;
 }
 .how-grid-cell-wrapper:nth-child(odd) .how-cell-text h4{
-  color: #EF4A23;
+  color: $color-orange;
 }
 .how-grid-cell-wrapper:nth-child(even) .how-cell-text h4{
-  color:#009999;
+  color:$color-light-blue;
 }
 .how-grid{
   margin-top:7.62%; //90/1180
@@ -304,18 +322,28 @@ a {
 .how-grid-cell{
   @extend .column;
   display:table;
-  margin-bottom:45px;
+  margin-bottom:40px;
 }
-.how-cricle-wrapper{
-  width: 160px;
+$table-cell-height: 160px;
+.how-picto-wrapper{
+  width: $table-cell-height;
   display:table-cell;
   vertical-align: middle;
+  text-align: center;
 }
-.how-circle{
-  background-color: #dddddd;
-  border-radius: 50%;
-  height: 160px;
-  width:100%;
+.how-cell-text-wrapper{
+  height:$table-cell-height;
+}
+.how-text-content{
+  display:table-cell;
+  vertical-align: middle;
+  height:$table-cell-height;
+}
+.how-text-content-wrapper{
+  display:inline;
+}
+.how-picto{
+  height: 130px;
 }
 .how-cell-text{
   vertical-align: middle;
@@ -329,8 +357,9 @@ a {
 
 
 .ecosystem{
+  width:100%;
   margin-top:60px;
-  padding-top:40.76%;//587/1440
+  padding-top:53.4%;
   position: relative;
 }
 .ecosystem-wrapper{
@@ -340,10 +369,26 @@ a {
 .ecosystem-arrow{
   float:right;
   width:35.3%; //509/1440
+  height:100%;
+  display:table;
   transform: scaleX(-1);
 }
+.ecosystem-arrow-wrapper{
+  display: table-cell;
+  vertical-align: middle;
+}
 .ecosystem-img{
-  
+  float:left;
+  width: calc(50% - #{$container-margin-big}); //1180/1440 *0.5
+  display:table;
+  margin-left: $container-margin-big;
+}
+.ecosystem-img-wrapper{
+  display: table-cell;
+  vertical-align: middle;
+}
+.ecosystem-svg{
+  width:100%;
 }
 
 
@@ -372,33 +417,38 @@ a {
   color: #DDDDDD;
   padding:0 10px;
 }
-.step1{
+.roadmap-step1{
+  @extend .step;
   top:33.25%;//445/1338
   left:69.98%;//140/1404.5
   width:18.6%;
 }
-.step2{
+.roadmap-step2{
+  @extend .step;
   top:14.94%;//200/1338
   left:39.87%;//560/1404.5
   width:15.6%;
 }
-.step3{
+.roadmap-step3{
+  @extend .step;
   top:51.19%;//685/1338
   left:39.87%;//560/1404.5
   width:18.75%;//280/1404.5
 }
-.step4{
+.roadmap-step4{
+  @extend .step;
   top:34.37%;//460/1338
   left:9.96%;//140/1404.5
   width:15.3%;//215/1404.5
 }
-.step5{
+.roadmap-step5{
+  @extend .step;
   top:69.88%;//935/1338
   left:9.96%;//140/1404.5
   width:18.75%;//280/1404.5
 }
 .step > h4{
-  color:#EF4A23;
+  color:$color-orange;
 }
 
 
@@ -423,21 +473,31 @@ a {
   top:9.4%;//160/1702.5
 }
 .whitepaper-text{
-  @extend .column;
   position: absolute;
   right:0;
   top:16.44%;//300px;
   left:50%;
   margin-right:$container-margin-big;
+  height:12.91%;//220/1702.9
+}
+.whitepaper-text-container{
+  display:table;
+  height:100%;
+}
+.whitepaper-text-wrapper{
+  display: table-cell;
+  vertical-align: middle;
+  @extend .column;
 }
 .whitepaper-btn{
-  background-color: #EF4A23;
+  background-color: $color-orange;
   height:37px;
   width:202px;
   border:0;
   border-radius:5px;
   outline:none;
   font-size:14px;
+  margin-top:10px;
 }
 .faq-wrapper{
   position: absolute;
@@ -482,13 +542,17 @@ ul.collapsible a{
   text-align: center;
   position: relative;
 }
-.partners>h2{
+.partners-title{
   position: absolute;
   left: 0;
   right: 0;
   top:32.5%;
   margin: 0 auto;
 }
+
+
+
+
 .team{
   background-image: url(../images/team-bg.svg);
   background-repeat:no-repeat;
@@ -499,7 +563,7 @@ ul.collapsible a{
   position:relative;
   text-align: center;
 }
-.team>h2{
+.team-section-title{
   position: absolute;
   top:17.61%;
   left:0;
@@ -512,30 +576,30 @@ ul.collapsible a{
   color: #DDDDDD;
 }
 .team-title{
-  color:#EF4A23;
+  color:$color-orange;
   padding-top:5px;
 }
 .team-name{
   color:#FFFFFF;
   padding-top:10px;
+  font-size:15px;
 }
 .team-picture{
-  width:77%;//154px;
+  width:67%;//154px;
+}
+.team-profile{
+  padding-top:5px;
 }
 #team1{
-  left:27.77%;//400/1440;
-  top:29%; //422/1454.8
+  left:28.1%;//400/1440;
+  top:28.8%; //422/1454.8
 }
 #team2{
-  left:57.77%;
-  top:29%; //422/1454.8
-}
-#team2{
-  left:57.77%;
-  top:29%; //422/1454.8
+  left:58.1%;
+  top:28.8%; //422/1454.8
 }
 #team3{
-  left:43.5%;
+  left:43.2%;
   top:37.6%;
 }
 
@@ -569,9 +633,12 @@ ul.collapsible a{
   margin-top:-8.68%; //125/1440
   position:relative;
 }
+.linkedin-icon{
+  height:18px;
+}
 #advisor1{
-  left:27.77%;;
-  top:8.9%;
+  left: 28.05%;
+  top: 8.95%;
 }
 #advisor2{
   left:57.77%;
@@ -614,16 +681,15 @@ ul.collapsible a{
 .contacts-title{
   float:left;
   padding:20px;
-  border-right: 5px solid #EF4A23;
+  border-right: 5px solid $color-orange;
   text-align: center;
 }
-.contacts-title>h2{
-  margin:0px;
+.contacts-email{
+  display: inline;
 }
 .contacts-follow{
   float:left;
   padding:20px;
-
 }
 .contacts-follow>.icons{
   padding-top:10px;
@@ -635,10 +701,10 @@ ul.collapsible a{
 
 
 .text-orange{
-  color:#EF4A23;
+  color:$color-orange;
 }
 .text-blue{
-  color:#008BAD;
+  color:$color-light-blue;
 }
 
 
@@ -651,7 +717,7 @@ ul.collapsible a{
     margin:10px 0;
   }
   h2{
-    font-size:43px;
+    font-size:42px;
   }
   .faq-wrapper{
     width: calc(52% - #{$container-margin-small});//a little bit of cheating
@@ -672,7 +738,7 @@ ul.collapsible a{
   .narrow-column{
     padding-right: $text-padding-small;
   }
-  .what-row1-text-wrapper,.what-row2-text-wrapper,.what-row3-text-wrapper,.how-grid-cell,.whitepaper-text,.faq{
+  .what-row1-text-wrapper,.what-row2-text-wrapper,.what-row3-text-wrapper,.how-grid-cell,.whitepaper-text-wrapper,.faq{
     @extend .narrow-column;
   }
   .vision-text-wrapper{
@@ -698,10 +764,10 @@ ul.collapsible a{
   .intro-subscription-wrapper{
     width:calc(100% - 66.73% - 1%);//912.9/(0.95*1440)=66.73 //this depends on container-margin-small
   }
-  .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper{
+  .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper,.ecosystem-img{
     margin-left: $container-margin-small;
   }
-  .what-row1-text,.what-row3-text{
+  .what-row1-text,.what-row3-text,.ecosystem-img{
     width: calc(50% - #{$container-margin-small});
   }
   .faq-wrapper{
@@ -715,6 +781,9 @@ ul.collapsible a{
   }
   .vision{
     padding-top:51.7%;
+  }
+  .ecosystem{
+    padding-top:58.6%;
   }
   
 }
