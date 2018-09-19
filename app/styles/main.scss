@@ -4,8 +4,8 @@ $text-padding-small: 10px;
 $container-margin-big: 9.05%;//130/1440
 $container-margin-small: 5%;
 $default-text-font-size: 16px;
-$color-orange:#F27D00;
-$color-light-blue:#0E79EB;
+$color-orange:#FF6403;
+$color-light-blue:#04ADD9;
 
 // bower:scss
 // endbower
@@ -592,11 +592,11 @@ ul.collapsible a{
 }
 #team1{
   left:28.1%;//400/1440;
-  top:28.8%; //422/1454.8
+  top:28.9%; //422/1454.8
 }
 #team2{
   left:58.1%;
-  top:28.8%; //422/1454.8
+  top:28.9%; //422/1454.8
 }
 #team3{
   left:43.2%;
@@ -604,8 +604,10 @@ ul.collapsible a{
 }
 
 
-
-
+.advisors{
+  position: relative;
+  z-index: 1;
+}
 .advisors-title{
   margin-top:-40.97%;//590/1440
   width:100%;
@@ -637,11 +639,11 @@ ul.collapsible a{
   height:18px;
 }
 #advisor1{
-  left: 28.05%;
+  left:28.1%;
   top: 8.95%;
 }
 #advisor2{
-  left:57.77%;
+  left:58.1%;
   top:8.9%;
 }
 #advisor3{
@@ -649,7 +651,7 @@ ul.collapsible a{
   top:21.5%;
 }
 #advisor4{
-  left:28.1%;;
+  left:28.1%;
   top:58.9%;
 }
 #advisor5{
