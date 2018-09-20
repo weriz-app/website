@@ -99,6 +99,11 @@ img {
   margin: 0;
 }
 
+.full-width-height-absolute{
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
 .container{
   min-width: 980px;
 }
@@ -213,8 +218,7 @@ img {
   position:relative;
 }
 .vision-wrapper{
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
+  @extend .full-width-height-absolute;
 }
 .vision-img {
   float:left;
@@ -263,6 +267,7 @@ img {
 }
 .what-row2{
   margin-top:-3.47%; //50/1440
+  width:100%;
   float:left;
 }
 .what-row2-building{
@@ -271,11 +276,24 @@ img {
 }
 .what-row2-text{
   float:right;
-  width:50%;
+  width:50%; 
+  padding-top:21.4%;
+  margin-top:5%;
+  position:relative;
+}
+.what-row2-text-fixed-height{
+  @extend .full-width-height-absolute;
+}
+.what-row2-text-table{
+  display:table;
+  height:100%;
+}
+.what-row2-text-table-cell{
+  display: table-cell;
+  vertical-align: middle;
 }
 .what-row2-text-wrapper {
   @extend .column;
-  margin-top:10%;
   margin-right:calc(2 * #{$container-margin-big});//2*9.05
 }
 .what-row3{
@@ -363,8 +381,7 @@ $table-cell-height: 160px;
   position: relative;
 }
 .ecosystem-wrapper{
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
+  @extend .full-width-height-absolute;
 }
 .ecosystem-arrow{
   float:right;
@@ -719,7 +736,7 @@ ul.collapsible a{
     margin:10px 0;
   }
   h2{
-    font-size:42px;
+    font-size:38px;
   }
   .faq-wrapper{
     width: calc(52% - #{$container-margin-small});//a little bit of cheating
@@ -752,7 +769,7 @@ ul.collapsible a{
     margin:0;
   }
   h2{
-    font-size:40px;
+    font-size:36px;
   }
   h5{
     font-size:16px;
