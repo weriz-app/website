@@ -77,6 +77,10 @@ a {
   color: white;
   text-decoration: none; /* no underline */
 }
+a:hover {
+  cursor:pointer;
+}
+
 
 button:not(:disabled){
   cursor:pointer;
@@ -172,7 +176,7 @@ img {
   display:table;
   width:100%;
 }
-.intro-subscription>div{
+.subscription-input-wrapper{
   display: table-cell;
   vertical-align: middle;
 }
@@ -193,6 +197,8 @@ img {
   font-weight: 100;
 }
 .subscription-button-wrapper{
+  display: table-cell;
+  vertical-align: middle;
   width:62px;
 }
 .subscription-btn{
@@ -807,3 +813,33 @@ ul.collapsible a{
   
 }
 
+
+
+.ml-form-embedSubmitLoad {
+  background-color: #FF6403;
+  margin-left:22px;
+  height:40px;
+  width:40px;
+  border:0;
+  vertical-align: middle;
+  outline:none;
+  display: inline-block;
+}
+.ml-form-embedSubmitLoad:after {
+  content: " ";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #ffffff #ffffff #ffffff transparent;
+  animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+}
+@keyframes ml-form-embedSubmitLoad {
+  0% {
+  transform: rotate(0deg);
+  }
+  100% {
+  transform: rotate(360deg);
+  }
+}

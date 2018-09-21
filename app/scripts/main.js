@@ -1,15 +1,10 @@
-console.log('\'Allo \'Allo!');
-
-[].forEach.call(document.querySelectorAll('.collapsible a'),function(a){
-    a.addEventListener('click',function(){
-        var li = a.parentElement;
-        if(li.classList.contains('selected'))
-            li.classList.remove('selected');
-        else
-            li.classList.add('selected');
-        var nextLi = li;
-        var prevLi = li;
-        while(nextLi=nextLi.nextSibling){if(nextLi.nodeName.toLowerCase() == 'li') nextLi.classList.remove('selected');}
-        while(prevLi=prevLi.previousSibling){if(prevLi.nodeName.toLowerCase() == 'li') prevLi.classList.remove('selected');}
-    });
+$('.collapsible a').on('click',function(a){    
+    var li = $( this ).parent();
+    li.toggleClass('selected');
+    li.siblings().removeClass('selected');
 });
+window.ml_webform_after_success = function(){
+    toastr.options.positionClass='toast-bottom-right';
+    toastr.success('You have successfully subscribed to our newsletter!','Thank you!').css('width','400px');
+    ;
+}

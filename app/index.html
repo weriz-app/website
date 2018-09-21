@@ -23,6 +23,7 @@
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css styles/main.css -->
@@ -89,14 +90,34 @@
         <h3>Where Benefit, Ease and Trust</h3>
         <h3>meet up just near you!</h3>
         <div class="intro-subscription-wrapper">
-          <div class="intro-subscription">
-            <div>
-              <input class="subscription-input" placeholder="Enter email for newsletter subscription">
-            </div>
-            <div class="subscription-button-wrapper">
-              <button class="subscription-btn"></button>
-            </div>
+          <div id="mlb2-1048740" class="ml-subscribe-form">
+            <form class="ml-block-form intro-subscription" action="https://app.mailerlite.com/webforms/submit/n1m6r5" data-code="n1m6r5" method="post" target="_blank">
+              <style type="text/css">
+                .ml_message_wrapper {
+                  position: absolute !important;
+                  left: -9999px !important;
+                }
+              </style>
+              <div aria-label="Please leave the following field empty" class="ml_message_wrapper">
+                <input type="text" name="ml_message" tabindex="-1" value="" placeholder="Message" autocomplete="off" title="message">
+                <input type="text" name="ml_email" tabindex="-1" value="" placeholder="Email" autocomplete="off" title="email">
+                <input type="text" name="ml_name" tabindex="-1" value="" placeholder="Name" autocomplete="off" title="name">
+              </div>
+              
+              <div class="subscription-input-wrapper ml-validate-email ml-validate-required">
+                <input type="email" name="fields[email]" class="subscription-input" placeholder="Enter email for newsletter subscription" required>
+              </div>
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="subscription-button-wrapper ml-form-embedSubmit">
+                <button type="submit" class="subscription-btn primary"></button>
+                <!-- button while sending request-->
+                <button disabled="disabled" style="display:none;" type="button" class="loading ml-form-embedSubmitLoad">
+                  <div><div></div><div></div><div></div><div></div></div>
+                </button>
+              </div>
+            </form>
           </div>
+          <img src="https://track.mailerlite.com/webforms/o/1048740/n1m6r5?vaa4d608450783acdc64d5338ff94f6d5" width="1" height="1" style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block;" border="0">
         </div>
       </div>
     </div>
@@ -362,21 +383,21 @@
           <h2>FAQ</h2>
           <ul class="collapsible">
             <li>
-              <a href="#nowhere">
+              <a>
                 <h5>Do I have to view the ads to utilize the app?</h5>
               </a>
               <p class="no-margin">It doesn’t work like that. First, You are only offered the information that you are looking for. Second, the
                 app is still completely free and functional if you'd rather not be bothered by the ads.</p>
             </li>
             <li>
-              <a href="#nowhere">
+              <a>
                 <h5>Can I buy a house with the money I earn in Weriz?</h5>
               </a>
               <p class="no-margin">Unfortunately not, but if you believe in the idea and are interested in long-term investments, you might be
                 able to buy more than one!</p>
             </li>
             <li>
-              <a href="#nowhere">
+              <a>
                 <h5>When does the token sale start? How can I participate?</h5>
               </a>
               <p class="no-margin">Our token sale will take place in March 2019. the exact participation instructions will be announced one month
@@ -549,8 +570,13 @@
     </div>
   </div>
 
+  <!--<script src="https://static.mailerlite.com/js/w/webforms.min.js?vaa4d608450783acdc64d5338ff94f6d5" type="text/javascript"></script>-->
+  <script src="scripts//mailerlite.js" type="text/javascript"></script>
+
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/toastr/toastr.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
