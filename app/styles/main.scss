@@ -236,6 +236,10 @@ img {
   display: table-cell;
   vertical-align: middle;
 }
+.vision-img-wrapper>img{
+    //fix for SVG images in IE proposed here https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+    width:100%;
+}
 .vision-text{
   float:right;
   display: table;
@@ -399,6 +403,10 @@ $table-cell-height: 160px;
 .ecosystem-arrow-wrapper{
   display: table-cell;
   vertical-align: middle;
+}
+.ecosystem-arrow-wrapper>img{
+  //fix for SVG images in IE proposed here https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+  width:100%;
 }
 .ecosystem-img{
   float:left;
@@ -722,6 +730,7 @@ ul.collapsible a{
 .social-icon{
   padding-right:10px;
   width:40px;
+  height: 40px;
 }
 
 
