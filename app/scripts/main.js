@@ -1,5 +1,5 @@
 $('.collapsible a').on('click',function(a){    
-    var li = $( this ).parent();
+    var li = $( this ).parent().parent();
     li.toggleClass('selected');
     li.siblings().removeClass('selected');
 });
