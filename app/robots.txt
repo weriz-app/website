@@ -1,4 +1,5 @@
 # robotstxt.org/
+Sitemap: https://www.weriz.app/sitemap.xml
 
 User-agent: * 
 Disallow:
