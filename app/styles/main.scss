@@ -10,12 +10,9 @@ $color-light-blue:#04ADD9;
 // bower:scss
 // endbower
 
-/*@font-face {
-  font-family: 'Roboto';
-  src: url(../fonts/Roboto-Medium_1.ttf) format('truetype');
-  font-weight: normal;
-	font-style: normal;
-}*/
+
+//Disable font-boosting
+html * {max-height:1000000px;}
 
 h1{
   font-size: 90px;
