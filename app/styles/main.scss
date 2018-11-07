@@ -78,6 +78,10 @@ a {
 a:hover {
   cursor:pointer;
 }
+.link {
+  text-decoration:underline;
+  color:#dddddd;  
+}
 
 
 button:not(:disabled){
@@ -264,14 +268,14 @@ img {
   float:left;
   width:calc(50% - #{$container-margin-big});//50-9.05
   margin-left:$container-margin-big;
-  margin-top:-59.83%;//861/1440
+  margin-top:-53.81%;//775(height of picture)/1440
 }
 .what-row1-text-wrapper{
   @extend .column;
 }
 .what-row1-building{
   float:right;
-  width:69.4%; //1000/1440
+  width:62.5%; //900/1440
 }
 .what-row2{
   margin-top:-3.47%; //50/1440
@@ -310,7 +314,7 @@ img {
 }
 .what-row3-building{
   float:right;
-  width:69.4%; //1000/1440
+  width:62.5%; //900/1440
 }
 .what-row3-text{
   float:left;
@@ -443,7 +447,6 @@ $table-cell-height: 160px;
 .step{
   position: absolute;
   text-align: center;
-  color: #DDDDDD;
   padding:0 10px;
 }
 .roadmap-step1{
@@ -602,7 +605,6 @@ ul.collapsible a{
   position: absolute;
   width:13.88%; //200/1440;
   text-align: center;
-  color: #DDDDDD;
 }
 .team-title{
   color:$color-orange;
