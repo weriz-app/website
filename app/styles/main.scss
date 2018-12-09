@@ -6,49 +6,52 @@ $container-margin-small: 5%;
 $default-text-font-size: 16px;
 $color-orange:#FF6403;
 $color-light-blue:#04ADD9;
+$font-thin: 300;
+$font-normal: 400;
+$font-bold: 700;
 
 // bower:scss
 // endbower
 
 
-//Disable font-boosting
+//Disable font-boosting on android
 //https://stackoverflow.com/a/16432702
 html * {max-height:1000000px;}
 
 h1{
-  font-size: 90px;
-  font-weight: 700;
-  margin-bottom: 0;
+  font-size: 34px;
+  font-weight: $font-bold;
+  margin: 0;
 }
 
 h2{
   font-size: 44px;
-  font-weight: 400;
+  font-weight: $font-normal;
   margin-bottom: 0;
 }
 
 h3{
-  font-size: 30px;//based on design it was 39 but it's too much I guess
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: $font-normal;
   margin: 0;
 }
 
 h4{
   font-size: 20px;
-  font-weight: 400;
+  font-weight: $font-normal;
   margin: 0;
 }
 
 h5{
   font-size: 18px;
-  font-weight: 400;
+  font-weight: $font-normal;
   margin: 5px 0;
 }
 
 p{
   font-size: $default-text-font-size;
   line-height:25px;
-  font-weight: 300;
+  font-weight: $font-thin;
   color:#dddddd;
   text-align: justify;
 }
@@ -83,7 +86,6 @@ a:hover {
   color:#dddddd;  
 }
 
-
 button:not(:disabled){
   cursor:pointer;
 }
@@ -94,6 +96,7 @@ button:disabled{
 img {
   vertical-align: middle;
 }
+
 
 
 
@@ -126,53 +129,125 @@ img {
 	visibility:hidden;
 }
 
+
+
 .menu {
   height:60px;
   margin-top:30px;
+  text-align:center;
 }
-
-.logo {
-  float:left;
-  line-height:0;
-}
-.logo-img{
-  height:100px;
-}
- 
 .menu-items{
-  float:right;
+  display:inline-block;
 }
-
+.menu-items > ol{
+  padding:0px;
+}
 .menu-item {
   float:left;
-  line-height: 60px;
   vertical-align: middle;
   padding:0px 27px;
 }
 
-.intro {
-  margin-top:10px;
-  //background-position: 100% 0;
-  padding-top:1px; //to prevent margin collapse
+
+
+.intro{
+  text-align: center;
+  margin-top:100px;
+  height:550px;
 }
-.intro-pattern{
-  float:right;
-  background-image: url(../images/header-pattern.svg);
-  background-repeat:no-repeat;
-  width:63.39%;//912.9/1440
-  padding-top:50.68%; //729.82/1440
-  //margin-right:-11.01%; //(130-81.9%)/2
+.logo {
+  display: inline-block;
+  margin: 0 auto;
+  line-height:0;
+  width:320px;
+  vertical-align: middle;
+  animation: zoomIn 1s; 
 }
-.intro-text {
-  margin-top: 12%; //190/1180
-  margin-left: $container-margin-big;
+.logo-img{
+  width:320px;
 }
-.intro-text>h3{
-  white-space: nowrap;
+.crescent{
+  height:240px;
+  width:154px;
 }
-.intro-subscription-wrapper{
-  width:calc(100% - 69.68% - 1%);//912.9/1310=69.68
-  margin-top:25px;
+.biz-background{
+  position:relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:-90px;
+}
+.biz-background>svg:not(:first-of-type).crescent{
+  margin-left:-106px;
+}
+.biz-picto{
+  position: absolute;
+  right:30px;
+  top:20px;
+}
+.intro-biz-title{
+  color: #04ADD9;
+}
+.citizen-background{
+  position:relative;
+  direction: rtl;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:-90px;
+}
+.citizen-background>svg:not(:first-of-type).crescent{
+  margin-right:-106px;
+}
+.citizen-picto{
+  position: absolute;
+  left:30px;
+  top:20px;
+}
+.intro-picto{
+  width:65px;
+}
+.intro-text-container{
+  position:absolute;
+  //background-color:red;
+  width: 325px;
+  left: 110px;
+  top: 15px;
+  bottom: 20px;
+  text-align:left;
+  direction:ltr;
+}
+.intro-citizen-title{
+  color:#FFCC00;
+}
+.intro-text{
+  padding-top:10px;
+  font-size: 21px;
+  line-height:30px;
+  font-weight:$font-thin;
+}
+.fadeIn{
+  animation: fadeIn 500ms;
+}
+@keyframes zoomIn{
+  from{
+    transform: scale3d(0,0,1);
+  }
+  to{
+    transform: scale3d(1,1,1);
+  }
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.subscription-button{
+  width:360px;
+  margin: 0 auto;
+  margin-top:50px;
+  animation: zoomIn 1s; 
 }
 .intro-subscription{
   display:table;
@@ -183,40 +258,50 @@ img {
   vertical-align: middle;
 }
 .subscription-input {
-  background-color:rgba($color: #183C68, $alpha: 0.64);
+  background-color:#0758BA;
   border:none;
   width:100%;
   height:40px;
-  padding:0 8px;
+  padding:0 12px;
   font-size: $default-text-font-size;
-  font-weight:100;
+  font-weight:$font-thin;
   vertical-align: middle;
   outline:none;
+  border-radius:20px;
 }
 ::placeholder {
   color: rgba($color: #FFFFFF, $alpha: 0.58);
   font-size: 14px;
-  font-weight: 100;
+  font-weight: $font-thin;
 }
 .subscription-button-wrapper{
   display: table-cell;
   vertical-align: middle;
-  width:62px;
+  width:40px;
 }
 .subscription-btn{
   background-color: $color-orange;
   background-image: url(../images/tick.png);
   background-position:center;
   background-repeat:no-repeat;
-  margin-left:22px;
+  margin-left:-33px;
+  border-radius:20px;
   height:40px;
   width:40px;
   border:0;
   vertical-align: middle;
   outline:none;
 }
-
-
+.dynamic-text{
+  margin-top:50px;
+  font-size:34px;
+}
+.dynamic-text>.static{
+  color: #04ADD9;
+}
+.dynamic-text>.dynamic{
+  color:#FFCC00;
+}
 
 
 
@@ -795,9 +880,6 @@ ul.collapsible a{
   .content{
     width:calc(100% - (#{$container-margin-small} * 2)); //1180/1440
   }
-  .intro-subscription-wrapper{
-    width:calc(100% - 66.73% - 1%);//912.9/(0.95*1440)=66.73 //this depends on container-margin-small
-  }
   .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper,.ecosystem-img{
     margin-left: $container-margin-small;
   }
@@ -826,7 +908,8 @@ ul.collapsible a{
 
 .ml-form-embedSubmitLoad {
   background-color: #FF6403;
-  margin-left:22px;
+  border-radius:20px;
+  margin-left:-33px;
   height:40px;
   width:40px;
   border:0;

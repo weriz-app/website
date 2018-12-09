@@ -14,3 +14,29 @@ window.ml_webform_after_success = function(){
     toastr.success('You have successfully subscribed to our newsletter!','Thank you for your interest').css('width','400px');
     ;
 }
+var dynamicTextValues = ['Flourished','Fun','Efficient','Smart','Safe','Easy','Benficial','Surprised','Rich']
+ $('.logo').on('animationend', function(){   
+    var i=1;
+    var interval = setInterval(function(){
+        var opacity = 0.5-0.05*(i-1);
+        $('.citizen-background').append('<svg class="crescent"><use xlink:href="#crescent" fill="#04ADD9" fill-opacity="'+opacity+'" transform="scale(-1, 1) translate(-154,0)"/></svg>');
+        $('.biz-background').append('<svg class="crescent"><use xlink:href="#crescent" fill="#0758BA" fill-opacity="'+opacity+'"/></svg>');
+        if(++i>9){
+            clearInterval(interval);
+            $('.citizen-picto').append('<img src="images/citizen-picto.png" class="intro-picto fadeIn" alt="citizens">');
+            $('.biz-picto').append('<img src="images/biz-picto.png" class="intro-picto fadeIn" alt="local businesses">');
+            $('.citizen-background>.intro-text-container').append('<h1 class="intro-citizen-title fadeIn">Personal Assistant for Ideal Local Life</h1>');
+            $('.citizen-background>.intro-text-container').append('<div class="intro-text fadeIn">Tell Weriz about yourself, your needs and interests, and Weriz lets you discover your ideal lifestyle efficiently.</div>');
+            $('.biz-background>.intro-text-container').append('<h1 class="intro-biz-title fadeIn">Marketing Platform for Local Businesses</h1>');
+            $('.biz-background>.intro-text-container').append('<div class="intro-text fadeIn">Go viral within your targeted neighborhood with the first world marketing platform for local businesses.</div>');
+            $('.dynamic-text').append('<span class="static fadeIn">Go Locally</span> <span class="dynamic">'+dynamicTextValues[0]+'!</span>');
+            
+            var j = 1;
+            setInterval(function(){
+                $('.dynamic').html(dynamicTextValues[j]+'!');
+                j=(j+1)%9;
+            },1500);
+          
+        }
+    }, 150);
+});
