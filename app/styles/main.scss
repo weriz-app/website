@@ -159,12 +159,12 @@ img {
   display: inline-block;
   margin: 0 auto;
   line-height:0;
-  width:320px;
+  width:22.22%;//320/1440
   vertical-align: middle;
   animation: zoomIn 1s; 
 }
 .logo-img{
-  width:320px;
+  width:100%;
 }
 .crescent{
   height:240px;
@@ -324,8 +324,8 @@ img {
   vertical-align: middle;
 }
 .vision-img-wrapper>img{
-    //fix for SVG images in IE proposed here https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
-    width:100%;
+  //fix for SVG images in IE proposed here https://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+  width:100%;
 }
 .vision-text{
   float:right;
