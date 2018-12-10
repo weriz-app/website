@@ -19,16 +19,16 @@ var dynamicTextValues = ['Flourished','Fun','Efficient','Smart','Safe','Easy','B
     var i=1;
     var interval = setInterval(function(){
         var opacity = 0.5-0.05*(i-1);
-        $('.citizen-background').append('<svg class="crescent"><use xlink:href="#crescent" fill="#04ADD9" fill-opacity="'+opacity+'" transform="scale(-1, 1) translate(-154,0)"/></svg>');
-        $('.biz-background').append('<svg class="crescent"><use xlink:href="#crescent" fill="#0758BA" fill-opacity="'+opacity+'"/></svg>');
+        $('.citizen-background').append('<div class="crescent-container" style="margin-right:'+((i==1)?0:'-19.7')+'%;"><svg viewBox="0 0 183.205 286.768" preserveAspectRatio="xMidYMid meet" class="crescent"><use xlink:href="#crescent-flipped" fill="#04ADD9" fill-opacity="'+opacity+'" /></svg></div>');
+        $('.biz-background').append('<div class="crescent-container" style="margin-left:'+((i==1)?0:'-19.7')+'%;"><svg viewBox="0 0 183.205 286.768" preserveAspectRatio="xMidYMid meet" class="crescent"><use xlink:href="#crescent" fill="#0758BA" fill-opacity="'+opacity+'"/></svg></div>');
         if(++i>9){
             clearInterval(interval);
             $('.citizen-picto').append('<img src="images/citizen-picto.png" class="intro-picto fadeIn" alt="citizens">');
             $('.biz-picto').append('<img src="images/biz-picto.png" class="intro-picto fadeIn" alt="local businesses">');
-            $('.citizen-background>.intro-text-container').append('<h1 class="intro-citizen-title fadeIn">Personal Assistant for Ideal Local Life</h1>');
-            $('.citizen-background>.intro-text-container').append('<div class="intro-text fadeIn">Tell Weriz about yourself, your needs and interests, and Weriz lets you discover your ideal lifestyle efficiently.</div>');
-            $('.biz-background>.intro-text-container').append('<h1 class="intro-biz-title fadeIn">Marketing Platform for Local Businesses</h1>');
-            $('.biz-background>.intro-text-container').append('<div class="intro-text fadeIn">Go viral within your targeted neighborhood with the first world marketing platform for local businesses.</div>');
+            $('.citizen-text-container').append('<h1 class="intro-citizen-title fadeIn">Personal Assistant for Ideal Local Life</h1>');
+            $('.citizen-text-container').append('<div class="intro-text fadeIn">Tell Weriz about yourself, your needs and interests, and Weriz lets you discover your ideal lifestyle efficiently.</div>');
+            $('.biz-text-container').append('<h1 class="intro-biz-title fadeIn">Marketing Platform for Local Businesses</h1>');
+            $('.biz-text-container').append('<div class="intro-text fadeIn">Go viral within your targeted neighborhood with the first world marketing platform for local businesses.</div>');
             $('.dynamic-text').append('<span class="static fadeIn">Go Locally</span> <span class="dynamic">'+dynamicTextValues[0]+'!</span>');
             
             var j = 1;

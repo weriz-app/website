@@ -123,10 +123,10 @@ img {
 }
 
 .clear::after{
-	clear:both;
-	content: ' ';
-	display:block;
-	visibility:hidden;
+  clear:both;
+  content: ' ';
+  display:block;
+  visibility:hidden;
 }
 
 
@@ -166,23 +166,27 @@ img {
 .logo-img{
   width:100%;
 }
+.crescent-container{
+  display:inline-block;
+  width:28.62%;
+}
 .crescent{
-  height:240px;
-  width:154px;
+  height:auto;
+  width:100%;
 }
 .biz-background{
   position:relative;
   display: inline-block;
   vertical-align: middle;
-  margin-left:-90px;
-}
-.biz-background>svg:not(:first-of-type).crescent{
-  margin-left:-106px;
+  text-align: left;
+  margin-left:-5.8%;
+  width: 37.37%;
 }
 .biz-picto{
   position: absolute;
-  right:30px;
-  top:20px;
+  right:5.57%;
+  top:8.16%;
+  width:12.08%;
 }
 .intro-biz-title{
   color: #04ADD9;
@@ -190,30 +194,36 @@ img {
 .citizen-background{
   position:relative;
   direction: rtl;
+  text-align: right;
   display: inline-block;
   vertical-align: middle;
-  margin-right:-90px;
-}
-.citizen-background>svg:not(:first-of-type).crescent{
-  margin-right:-106px;
+  margin-right:-5.8%;
+  width:37.37%;
 }
 .citizen-picto{
   position: absolute;
-  left:30px;
-  top:20px;
+  left:5.57%;
+  top:8.16%;
+  width:12.08%;
 }
 .intro-picto{
-  width:65px;
+  width:100%;
 }
 .intro-text-container{
   position:absolute;
-  //background-color:red;
-  width: 325px;
-  left: 110px;
-  top: 15px;
-  bottom: 20px;
+  width: 60.4%;
+  top: 6.12%;
+  bottom: 8.16%;
   text-align:left;
   direction:ltr;
+}
+.biz-text-container{
+  @extend .intro-text-container;
+  left: 20.44%;
+}
+.citizen-text-container{
+  @extend .intro-text-container;
+  right: 20.44%;
 }
 .intro-citizen-title{
   color:#FFCC00;
@@ -826,6 +836,15 @@ ul.collapsible a{
   color:$color-light-blue;
 }
 
+@media screen and (max-width:1415px){
+  h1{
+    font-size: 29px;
+  }
+  .intro-text{
+    padding-top:5px;
+  }  
+}
+
 
 @media screen and (max-width: 1230px) {
   .how-grid-cell-wrapper{
@@ -834,6 +853,13 @@ ul.collapsible a{
   p{
     line-height:23px;
     margin:10px 0;
+  }
+  .intro-text{
+    font-size: 20px;
+    line-height:25px;
+  }  
+  h1{
+    font-size: 26px;
   }
   h2{
     font-size:38px;
@@ -868,6 +894,14 @@ ul.collapsible a{
     line-height:20px;
     margin:0;
   }
+  .intro-text{
+    font-size: 17px;
+    line-height:24px;
+    padding-top:2px;
+  }  
+  h1{
+    font-size: 23px;
+  }
   h2{
     font-size:36px;
   }
@@ -880,7 +914,7 @@ ul.collapsible a{
   .content{
     width:calc(100% - (#{$container-margin-small} * 2)); //1180/1440
   }
-  .intro-text,.what-row1-text,.what-row3-text,.faq-wrapper,.ecosystem-img{
+  .what-row1-text,.what-row3-text,.faq-wrapper,.ecosystem-img{
     margin-left: $container-margin-small;
   }
   .what-row1-text,.what-row3-text,.ecosystem-img{
