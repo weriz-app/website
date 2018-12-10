@@ -804,7 +804,7 @@ ul.collapsible a{
 .contacts{
   position:absolute;
   top:50.85%; //465/914.3
-  left:51.97%; //730/1404.5
+  left:51.3%;
 }
 .contacts-title{
   float:left;
@@ -823,9 +823,8 @@ ul.collapsible a{
   padding-top:10px;
 }
 .social-icon{
-  padding-right:10px;
+  padding-right:8px;
   width:40px;
-  height: 40px;
 }
 
 
@@ -868,7 +867,7 @@ ul.collapsible a{
     width: calc(52% - #{$container-margin-small});//a little bit of cheating
   }
   .social-icon{
-    width:37px;
+    width:35px;
     padding-right:5px;
   }
   ul{
