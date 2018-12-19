@@ -15,7 +15,7 @@
         toastr.success('You have successfully subscribed to our newsletter!','Thank you for your interest').css('width','400px');
         ;
     }
-    var dynamicTextValues = ['Flourished','Fun','Efficient','Smart','Safe','Easy','Benficial','Surprised','Rich'];
+    var dynamicTextValues = ['Flourished','Fun','Efficient','Smart','Safe','Benficial','Surprised','Rich'];
     var animationExecuted = false;
     $('.logo').on('animationend', function(){
         triggerAnimation();
@@ -23,7 +23,7 @@
     //maybe the animation is finished before we reach the above code, so let's wait a little bit and then trigger the next animation
     setTimeout(function(){
         triggerAnimation();
-    },1000);//1 second is the duration of the animation
+    },1000);//1 second is the duration of the logo animation
 
     function triggerAnimation(){
         if(animationExecuted)
