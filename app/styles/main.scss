@@ -715,6 +715,10 @@ ul.collapsible a{
 }
 .team-picture{
   width:67%;//154px;
+  transition: transform 1s;
+}
+.team-picture:hover{
+  transform: scale(1.05);
 }
 .team-profile{
   padding-top:5px;
@@ -768,15 +772,15 @@ ul.collapsible a{
   width:18px;
 }
 #advisor1{
-  left:28.1%;
+  left:28.05%;
   top: 8.95%;
 }
 #advisor2{
-  left:58.1%;
+  left:58%;
   top:8.9%;
 }
 #advisor3{
-  left:43.5%;
+  left:43.2%;
   top:21.5%;
 }
 #advisor4{
@@ -788,7 +792,7 @@ ul.collapsible a{
   top: 21.5%;
 }
 #advisor6{
-  left:28.1%;
+  left:28.05%;
   top:58.9%;
 }
 #advisor7{
@@ -796,8 +800,8 @@ ul.collapsible a{
   top:58.9%;
 }
 #advisor8{
-  left:42.7%;
-  top:71.5%;
+  left:43%;
+  top:71.45%;
 }
 
 
@@ -866,7 +870,7 @@ ul.collapsible a{
     margin:10px 0;
   }
   .intro-text{
-    font-size: 20px;
+    font-size: 19px;
     line-height:25px;
   }  
   h1{

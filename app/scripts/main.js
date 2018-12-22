@@ -15,7 +15,7 @@
         toastr.success('You have successfully subscribed to our newsletter!','Thank you for your interest').css('width','400px');
         ;
     }
-    var dynamicTextValues = ['Flourished','Fun','Efficient','Smart','Safe','Benficial','Surprised','Rich'];
+    var dynamicTextValues = ['Flourished','Efficient','Smart','Recognized','Safe','Surprised','Rich','Lively'];
     var animationExecuted = false;
     $('.logo').on('animationend', function(){
         triggerAnimation();
@@ -43,13 +43,13 @@
                 $('.citizen-text-container').append('<h1 class="intro-citizen-title fadeIn">Personal Assistant for Ideal Local Life</h1>');
                 $('.citizen-text-container').append('<div class="intro-text fadeIn">Tell Weriz about yourself, your needs and interests, and Weriz lets you discover your ideal lifestyle efficiently.</div>');
                 $('.biz-text-container').append('<h1 class="intro-biz-title fadeIn">Marketing Platform for Local Businesses</h1>');
-                $('.biz-text-container').append('<div class="intro-text fadeIn">Go viral within your targeted neighborhood with the first world marketing platform for local businesses.</div>');
+                $('.biz-text-container').append('<div class="intro-text fadeIn">Go viral in your neighborhood and reach out to those who need your services with Weriz\'s innovative solution.</div>');
                 $('.dynamic-text').append('<span class="static fadeIn">Go Locally</span> <span class="dynamic">'+dynamicTextValues[0]+'!</span>');
                 
                 var j = 1;
                 setInterval(function(){
                     $('.dynamic').html(dynamicTextValues[j]+'!');
-                    j=(j+1)%9;
+                    j=(j+1)%dynamicTextValues.length;
                 },1500);
             
             }
