@@ -15,7 +15,7 @@
         toastr.success('You have successfully subscribed to our newsletter!','Thank you for your interest').css('width','400px');
         ;
     }
-    var dynamicTextValues = ['Flourished','Efficient','Smart','Recognized','Safe','Surprised','Rich','Lively'];
+    var dynamicTextValues = ['Flourished','Efficient','Smart','Recognized','Surprised','Rich','Lively'];
     var animationExecuted = false;
     $('.logo').on('animationend', function(){
         triggerAnimation();
